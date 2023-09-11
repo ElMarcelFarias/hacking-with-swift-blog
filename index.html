@@ -83,12 +83,12 @@
                     </div> 
                 </div> 
 
-                <button type="button" class="btn btn-sm btn-warning collapsed text-white mb-2" data-toggle="collapse" data-target="#collapse1-10" aria-expanded="false" aria-controls="collapse1-10">Dias 1-10</button>
+                <button type="button" class="btn btn-sm btn-warning collapsed text-white mb-2" data-toggle="collapse" data-target="#collapse1-10" aria-expanded="false" aria-controls="collapse1-10">Dias 1-12</button>
 
                 <div class="content">
                     <div id="collapse1-10" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" >
                         <div class="row " style="max-height: 1530px;">
-                            <div class="col-md-6 col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-2">
                                 <div class="card mb-4">
                                     <a data-target="#hacking01"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-001.png"></a>
                                     <div class="card-body">
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-2">
                                 <div class="card mb-4">
                                     <a data-target="#hacking02"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-002.png"></a>
                                     <div class="card-body">
@@ -106,12 +106,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3">
+                            <div class="col-sm-12 col-md-6 col-lg-2">
                                 <div class="card mb-4">
                                     <a data-target="#hacking03"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-003.png"></a>
                                     <div class="card-body">
                                         <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">08 Setembro 2023</span></small>
                                         <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking03">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking04"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-004.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">11 Setembro <br> 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking04">Visualizar</button></h5>
                                     </div>
                                 </div>
                             </div>
@@ -295,6 +304,65 @@ quote <span class="token operator">+=</span> <span class="token string-literal">
                 </div>
             </div>
             <!--HACKING #003-->
+
+            <!--HACKING #004-->
+            <div class="modal fade" id="hacking04" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#003 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Operadores aritméticos</b> - Operadores aritméticos em Swift são símbolos ou caracteres especiais usados para realizar operações matemáticas em valores numéricos. Adição (+): Usado para somar dois valores. Subtração (-): Utilizado para subtrair um valor de outro. Multiplicação (*): Usado para multiplicar dois valores. Divisão (/): Utilizado para dividir um valor por outro. Módulo (%): Calcula o resto da divisão entre dois valores inteiros. Incremento (++) e Decremento (--): Usados para aumentar ou diminuir o valor de uma variável em 1. ou (+=) (-+) (/=) (*=)</p>
+                                <pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> quote <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"The rain in Spain falls mainly on the "</span></span>
+quote <span class="token operator">+=</span> <span class="token string-literal"><span class="token string">"Spaniards"</span></span></code></pre>
+
+<p style="font-size: 18px;"><b>Condição If e Else</b> - As estruturas de controle de fluxo if e else em Swift são utilizadas para criar ramificações condicionais em seu código, permitindo que seu programa tome decisões com base em condições específicas.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">if</span> firstCard <span class="token operator">+</span> secondCard <span class="token operator">==</span> <span class="token number">2</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Aces – lucky!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> firstCard <span class="token operator">+</span> secondCard <span class="token operator">==</span> <span class="token number">21</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Blackjack!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Regular cards"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p style="font-size: 18px;"><b>Condição Switch case</b> - A estrutura switch em Swift é uma poderosa ferramenta de controle de fluxo usada para avaliar uma expressão ou valor e executar um bloco de código com base em correspondências específicas. </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">switch</span> weather <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"rain"</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Bring an umbrella"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"snow"</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Wrap up warm"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"sunny"</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Wear sunscreen"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Enjoy your day!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+<p style="font-size: 18px;"><b>Condição Switch case com Range Operator</b> - <b>O operador de intervalo</b>  (... ou ..<) pode ser usado em conjunto com a estrutura switch para criar casos que correspondam a um intervalo de valores. <b>O operador de intervalo fechado</b>  (...) é usado para criar um intervalo que inclui os valores de início e fim. Ele é útil quando você deseja verificar se um valor está dentro de um determinado intervalo. <b>O operador de intervalo semifechado (..<)</b> cria um intervalo que inclui o valor de início, mas exclui o valor final. Isso é útil quando você deseja criar intervalos que não incluam o valor máximo.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> score <span class="token operator">=</span> <span class="token number">85</span>
+
+<span class="token keyword">switch</span> score <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">..&lt;</span><span class="token number">50</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You failed badly."</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token number">50</span><span class="token operator">..&lt;</span><span class="token number">85</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You did OK."</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You did great!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #004-->
 
             
             <!--Collapse 1-10-->
