@@ -310,49 +310,78 @@ quote <span class="token operator">+=</span> <span class="token string-literal">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content ">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">#003 - HACKING WITH SWIFT</h4>
+                            <h4 class="modal-title" id="exampleModalLabel">#004 - HACKING WITH SWIFT</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span class="material-icons ">close</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="container">
-                                <p style="font-size: 18px;"><b>Operadores aritméticos</b> - Operadores aritméticos em Swift são símbolos ou caracteres especiais usados para realizar operações matemáticas em valores numéricos. Adição (+): Usado para somar dois valores. Subtração (-): Utilizado para subtrair um valor de outro. Multiplicação (*): Usado para multiplicar dois valores. Divisão (/): Utilizado para dividir um valor por outro. Módulo (%): Calcula o resto da divisão entre dois valores inteiros. Incremento (++) e Decremento (--): Usados para aumentar ou diminuir o valor de uma variável em 1. ou (+=) (-+) (/=) (*=)</p>
-                                <pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> quote <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"The rain in Spain falls mainly on the "</span></span>
-quote <span class="token operator">+=</span> <span class="token string-literal"><span class="token string">"Spaniards"</span></span></code></pre>
-
-<p style="font-size: 18px;"><b>Condição If e Else</b> - As estruturas de controle de fluxo if e else em Swift são utilizadas para criar ramificações condicionais em seu código, permitindo que seu programa tome decisões com base em condições específicas.</p>
-<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">if</span> firstCard <span class="token operator">+</span> secondCard <span class="token operator">==</span> <span class="token number">2</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Aces – lucky!"</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> firstCard <span class="token operator">+</span> secondCard <span class="token operator">==</span> <span class="token number">21</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Blackjack!"</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Regular cards"</span></span><span class="token punctuation">)</span>
+                                <p style="font-size: 18px;"><b>For loop: </b> Swift tem algumas maneiras de escrever loops, mas o mecanismo subjacente é o mesmo: executar algum código repetidamente até que uma condição seja avaliada como falsa. O loop mais comum em Swift é um forloop: ele percorrerá arrays e intervalos, e cada vez que o loop for executado, ele extrairá um item e o atribuirá a uma constante.</p>
+                                <pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">10</span></code></pre>
+                                <pre class=" language-swift"><code class=" language-swift"><span class="token keyword">for</span> number <span class="token keyword">in</span> count <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Number is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">number</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
 
-<p style="font-size: 18px;"><b>Condição Switch case</b> - A estrutura switch em Swift é uma poderosa ferramenta de controle de fluxo usada para avaliar uma expressão ou valor e executar um bloco de código com base em correspondências específicas. </p>
-<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">switch</span> weather <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"rain"</span></span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Bring an umbrella"</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"snow"</span></span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Wrap up warm"</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"sunny"</span></span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Wear sunscreen"</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">default</span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Enjoy your day!"</span></span><span class="token punctuation">)</span>
+<p style="font-size: 18px;">Exemplo com matrizes: </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> albums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Red"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"1989"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Reputation"</span></span><span class="token punctuation">]</span><font></font>
+    <font></font>
+<span class="token keyword">for</span> album <span class="token keyword">in</span> albums <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">album</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is on Apple Music"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p style="font-size: 18px;">Podemos também retirar a constante caso não for utiliza-la: </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Players gonna "</span></span><span class="token punctuation">)</span><font></font>
+<font></font>
+<span class="token keyword">for</span> <span class="token omit keyword">_</span> <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">5</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"play"</span></span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
 
 
-<p style="font-size: 18px;"><b>Condição Switch case com Range Operator</b> - <b>O operador de intervalo</b>  (... ou ..<) pode ser usado em conjunto com a estrutura switch para criar casos que correspondam a um intervalo de valores. <b>O operador de intervalo fechado</b>  (...) é usado para criar um intervalo que inclui os valores de início e fim. Ele é útil quando você deseja verificar se um valor está dentro de um determinado intervalo. <b>O operador de intervalo semifechado (..<)</b> cria um intervalo que inclui o valor de início, mas exclui o valor final. Isso é útil quando você deseja criar intervalos que não incluam o valor máximo.</p>
-<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> score <span class="token operator">=</span> <span class="token number">85</span>
 
-<span class="token keyword">switch</span> score <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">..&lt;</span><span class="token number">50</span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You failed badly."</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token number">50</span><span class="token operator">..&lt;</span><span class="token number">85</span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You did OK."</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">default</span><span class="token punctuation">:</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You did great!"</span></span><span class="token punctuation">)</span>
+<p style="font-size: 18px;"><b>While loop</b> - forneça uma condição para verificar, e seu código de loop irá girar e girar até que a condição falhe.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">1</span><font></font>
+<font></font>
+<span class="token keyword">while</span> number <span class="token operator">&lt;=</span> <span class="token number">20</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+    number <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Ready or not, here I come!"</span></span><span class="token punctuation">)</span></code></pre>
+
+<p style="font-size: 18px;"><b>Repeat Loop</b> - A terceira maneira de escrever loops não é muito usada, mas é tão simples de aprender que podemos abordá-la: é chamada de repeat loop e é idêntica a um while loop, exceto que a condição a ser verificada vem no final. <b>Código vai ser inicializado pelo menos umas vez!</b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">1</span><font></font>
+<font></font>
+<span class="token keyword">repeat</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+    number <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> number <span class="token operator">&lt;=</span> <span class="token number">20</span><font></font>
+<font></font>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Ready or not, here I come!"</span></span><span class="token punctuation">)</span></code></pre>
+
+<p style="font-size: 18px;"><b>Exiting loops</b> - Você pode sair de um loop a qualquer momento usando a palavra-chave <b>break</b>. </b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">while</span> countDown <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>countDown<span class="token punctuation">)</span><font></font>
+<font></font>
+<span class="token keyword">if</span> countDown <span class="token operator">==</span> <span class="token number">4</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I'm bored. Let's go now!"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+countDown <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p style="font-size: 18px;"><b>Exiting multiple loops</b> - Se você colocar um loop dentro de outro, ele será chamado de loop aninhado , e não é incomum querer sair do loop interno e do loop externo ao mesmo tempo. Conseguimos apelidar um looping para utilizar o break: </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token label important">outerLoop</span><span class="token punctuation">:</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">10</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">10</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> product <span class="token operator">=</span> i <span class="token operator">*</span> j
+        <span class="token function">print</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">i</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> * </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">j</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">product</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span><font></font>
+    <font></font>
+        <span class="token keyword">if</span> product <span class="token operator">==</span> <span class="token number">50</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"It's a bullseye!"</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span class="token label important"> outerLoop</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
                             </div>
                         </div>
