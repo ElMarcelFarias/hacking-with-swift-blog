@@ -124,6 +124,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking05"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-005.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">12 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking05">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -392,6 +401,127 @@ countDown <span class="token operator">-=</span> <span class="token number">1</s
                 </div>
             </div>
             <!--HACKING #004-->
+
+            <!--HACKING #005-->
+            <div class="modal fade" id="hacking05" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#005 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Functions | func</b> - Funções foram criadas para permitir a reutilização de blocos de código facilmente, ajudando nós, desenvolvedores, a não repetir diversas vezes o mesmo código. Existe uma técnica chamada composição de funções. Ao dividir seu trabalho em múltiplas pequenas funções, a composição de funções nos permite construir grandes funções combinando essas pequenas funções de várias maneiras, um pouco como peças de Lego.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">printAjuda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> mensagem <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+Bem vindo!
+
+Este é um blog para documentar o desenvolvimento 
+pessoal no projeto - Hacking with Swift 
+"""</span></span>
+
+    <span class="token function">print</span><span class="token punctuation">(</span>mensagem<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">printAjuda</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Parâmetros</b> - Parâmetros são aquilo que está entre os parênteses nos métodos e funções, sendo muitas vezes usado como sinônimo de argumento. Um parâmetro também pode ser descrito como um elemento ou característica que pode ser usado para estabelecer comparações entre pessoas, comportamentos, eventos, etc.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">quadrado</span><span class="token punctuation">(</span>numero<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>numero <span class="token operator">*</span> numero<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">quadrado</span><span class="token punctuation">(</span>numero<span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Return</b> - Podemos enviar informações para as funções pelos parâmetros como também podemos voltar com esses dados com o return. Utilizando -> e o (Tipo do dado retornado)</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">quadrado</span><span class="token punctuation">(</span>numero<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> numero <span class="token operator">*</span> numero
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> resultado <span class="token operator">=</span> <span class="token function">quadrado</span><span class="token punctuation">(</span>numero<span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>resultado<span class="token punctuation">)</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Parameter labels</b> - Swift nos permite fornecer dois nomes para cada parâmetro: um para ser usado externamente ao chamar a função e outro para ser usado internamente dentro da função.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">saudacoes</span><span class="token punctuation">(</span>to name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Olá, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">saudacoes</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Marcel"</span></span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Omitindo parâmetros</b> - Swift nos permite omitir labels dos parâmetros passados na função. Você pode obter esse mesmo comportamento em suas próprias funções usando um sublinhado, _, para o nome do seu parâmetro externo.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">saudacoes</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> person<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Olá, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">person</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">saudacoes</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Marcel"</span></span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Parâmetros Padrões</b> - São parâmetros que já nascem com um valor padrão na hora da estruturação da função. Exemplo: 'amigavel: Bool = true'</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">saudacoes</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> person<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> amigavel<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> amigavel <span class="token operator">==</span> <span class="token boolean">true</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Olá, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">person</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Ah não, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">person</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> de novo..."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">saudacoes</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Marcel"</span></span><span class="token punctuation">)</span>
+<span class="token function">saudacoes</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Marcel"</span></span><span class="token punctuation">,</span> amigavel<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Variadic functions</b> - São funções que aceitam qualquer número de parâmetros do mesmo tipo. Você pode tornar qualquer parâmetro variável escrevendo ...após seu tipo. </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">quadrado</span><span class="token punctuation">(</span>numeros<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">...</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> numero <span class="token keyword">in</span> numeros <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">numero</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> ao quadrado é  </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">numero <span class="token operator">*</span> numero</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">quadrado</span><span class="token punctuation">(</span>numeros<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Throwing functions</b> - Throwing functions em Swift são aquelas que são capazes de encontrar erros que não conseguem ou não querem lidar. Isso não significa que cometerão erros, apenas que é possível que consigam. Como resultado, o Swift garantirá que tenhamos cuidado ao usá-los, para que quaisquer erros que ocorram sejam resolvidos. (Está função foi escrita em inglês para semelhar ao desenvolvimento real).</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">enum</span> <span class="token class-name">PasswordError</span><span class="token punctuation">:</span> <span class="token class-name">Error</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> obvious
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">checkPassword</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> password<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token operator">-&gt;</span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> password <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"password"</span></span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token class-name">PasswordError</span><span class="token punctuation">.</span>obvious
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Utilização de Throwing functions: </b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">do</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token function">checkPassword</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"password"</span></span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"That password is good!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You can't use that password."</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Parâmetro inout</b> Você pode passar um ou mais parâmetros como inout, o que significa que eles podem ser alterados dentro da sua função, e essas alterações refletem no valor original fora da função.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">doubleInPlace</span><span class="token punctuation">(</span>number<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    number <span class="token operator">*=</span> <span class="token number">2</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> myNum <span class="token operator">=</span> <span class="token number">10</span> 
+<span class="token function">doubleInPlace</span><span class="token punctuation">(</span>number<span class="token punctuation">:</span> <span class="token operator">&amp;</span>myNum<span class="token punctuation">)</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #005-->
 
             
             <!--Collapse 1-10-->
