@@ -133,6 +133,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking06"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-006.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">13 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking06">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,7 +154,7 @@
       <section>
             <!--inicio dos modais-->
 
-            <!--Collapse 1-10-->
+            <!--Collapse 1-12-->
             <!--HACKING #001-->
             <div class="modal fade" id="hacking01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -523,8 +532,78 @@ pessoal no projeto - Hacking with Swift
             </div>
             <!--HACKING #005-->
 
+
+            <!--HACKING #006-->
+            <div class="modal fade" id="hacking06" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#006 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Closures básicos</b> Em Swift podemos utilizar funções como qualquer outro tipo, strings e inteiros. Isso significa que você pode criar uma função e atribuí-la a uma variável, chamar essa função usando essa variável e até mesmo passar essa função para outras funções como parâmetros.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> driving <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I'm driving in my car"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Podemos chamar essa função assim: </b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">driving</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Closures com parâmetros: </b> Para fazer uma closure aceitar parâmetros, liste-os entre parênteses logo após a chave de abertura e escreva <b>in</b> para que o Swift saiba que o corpo principal do fechamento está iniciando.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> driving <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>place<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token keyword">in</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I'm going to </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">place</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> in my car"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 18px;"><b>Não utilizamos labels para os parâmetros! Usamos assim: </b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">driving</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Joinville"</span></span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Retornando valores com Closure: </b> Swift permite que uma closue retorne valores, vamos fazer-la retornar uma String,  então precisamos usar -> String antes do in e, em seguida, usar return como uma função normal</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> drivingWithReturn <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>place<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">String</span> <span class="token keyword">in</span>
+    <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"I'm going to </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">place</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> in my car"</span></span>
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 18px;"><b>Executamos desse jeito: </b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token function">drivingWithReturn</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Joinville"</span></span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Closure como parâmetro: </b> Se quiséssemos passar essa closure para uma função para que possa ser executado dentro dessa função, especificaríamos o tipo de parâmetro como () -> Void. Isso significa “não aceita parâmetros e retorna Void” – a maneira de Swift dizer “nada”.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> driving <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I'm driving in my car"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">travel</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I'm getting ready to go."</span></span><span class="token punctuation">)</span>
+    <span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"I arrived!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 18px;"><b>E utilizamos assim: </b> </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">travel</span><span class="token punctuation">(</span>action<span class="token punctuation">:</span> driving<span class="token punctuation">)</span></code></pre>
+                                <p style="font-size: 18px;"><b>Chama de Closure simplificada:  </b> </p>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">animate</span><span class="token punctuation">(</span>duration<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">,</span> animations<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Starting a </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">duration</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> second animation…"</span></span><span class="token punctuation">)</span>
+    <span class="token function">animations</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">animate</span><span class="token punctuation">(</span>duration<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Fade out the image"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #006-->
+
             
-            <!--Collapse 1-10-->
+            <!--Collapse 1-12-->
             
 
 
