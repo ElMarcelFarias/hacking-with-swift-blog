@@ -151,6 +151,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking08"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-008.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">15 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking08">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -673,6 +682,102 @@ pessoal no projeto - Hacking with Swift
                 </div>
             </div>
             <!--HACKING #007-->
+
+            <!--HACKING #008-->
+            <div class="modal fade" id="hacking08" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#008 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;">Structs: As structs em Swift são poderosas e possuem muitos recursos. Além disso, é mais seguro quando há a passagem por valor, em vez de passagem por referência (já que nesse caso, todas as instâncias estão conectadas entre si). São utilizadas para definir propriedades para armazenar dados. Definir métodos para prover funcionalidades. Definir subscripts para prover acessos de seus dados usando a sintaxe dos subscripts.</b></p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Sport</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 18px;">Precisamos instânciar uma struct para utiliza-la</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> tennis <span class="token operator">=</span> <span class="token class-name">Sport</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Tennis"</span></span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>tennis<span class="token punctuation">.</span>name<span class="token punctuation">)</span></code></pre>
+                               
+
+                                <p style="font-size: 18px;"><b>Propriedade computada: </b>Uma propriedade computada executa o código para receber seu valor. Notem: olympicStatus</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Sport</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> isOlympicSport<span class="token punctuation">:</span> <span class="token class-name">Bool</span><font></font>
+<font></font>
+    <span class="token keyword">var</span> olympicStatus<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> isOlympicSport <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is an Olympic sport"</span></span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is not an Olympic sport"</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Observador de propriedade: </b>Os observadores de propriedade permitem executar código antes ou depois de qualquer alteração de propriedade.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Progress</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> task<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> amount<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">didSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">task</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is now </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">amount</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">% complete"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Methods: </b>As estruturas podem ter funções dentro delas, e essas funções podem usar as propriedades da estrutura conforme necessário. Funções dentro de structs são chamadas de métodos , mas ainda usam a mesma func</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">City</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> population<span class="token punctuation">:</span> <span class="token class-name">Int</span><font></font>
+<font></font>
+    <span class="token keyword">func</span> <span class="token function-definition function">collectTaxes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> population <span class="token operator">*</span> <span class="token number">1000</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 18px;">Podemos utilizar desse jeito: </p>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> london <span class="token operator">=</span> <span class="token class-name">City</span><span class="token punctuation">(</span>population<span class="token punctuation">:</span> <span class="token number">9_000_000</span><span class="token punctuation">)</span>
+london<span class="token punctuation">.</span><span class="token function">collectTaxes</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+                            
+                                <p style="font-size: 18px;"><b>Mutanting methods: </b>Para alterarmos valores de atributos de uma struct precisamos utilizar a nomenclatura mutanting antes de iniciar nossa função</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span><font></font>
+<font></font>
+    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function-definition function">makeAnonymous</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Anonymous"</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Marcel"</span></span><span class="token punctuation">)</span>
+person<span class="token punctuation">.</span><span class="token function">makeAnonymous</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p style="font-size: 18px;"><b>Propriedades e Metodos da String: </b>Strings são structs – elas têm seus próprios métodos e propriedades que podemos usar para consultar e manipular a string. Alguns exemplos: count, hasPrefix, uppercased, sorted</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> string <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"iOS Develper"</span></span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span>count<span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span><span class="token function">hasPrefix</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"iOS"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span><span class="token function">uppercased</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+
+<p style="font-size: 18px;"><b>Propriedades e Metodos do Array: </b>Array também como a String é uma structs – elas têm seus próprios métodos e propriedades que podemos usar para consultar e manipular um array. Alguns exemplos: count, append, firstIndex, sorted, remove</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> toys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Woody"</span></span><span class="token punctuation">]</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>toys<span class="token punctuation">.</span>count<span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift">toys<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Buzz"</span></span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift">toys<span class="token punctuation">.</span><span class="token function">firstIndex</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Buzz"</span></span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span>toys<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-swift"><code class=" language-swift">toys<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>at<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #008-->
 
             
             <!--Collapse 1-12-->
