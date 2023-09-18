@@ -160,6 +160,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking09"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-009.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">18 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking09">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -778,6 +787,77 @@ person<span class="token punctuation">.</span><span class="token function">makeA
                 </div>
             </div>
             <!--HACKING #008-->
+
+            <!--HACKING #009-->
+            <div class="modal fade" id="hacking09" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#009 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Inicializadores:</b> Um inicializador nada mais é que uma forma de já te devolver o objeto com alguns valores setados. Mas uma coisa muito importante é, o inicializador só vai acessar os membros que forneçam acesso "externo" à struct, como propriedades public por exemplo.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> username<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        username <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Anonymous"</span></span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Creating a new user!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Referência a instancia:</b> Em Swift, Dentro dos métodos você obtém uma constante especial chamada self, que aponta para qualquer instância da estrutura que esteja sendo usada no momento. Esse self valor é particularmente útil quando você cria inicializadores que possuem os mesmos nomes de parâmetros da sua propriedade.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span><font></font>
+<font></font>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> was born!"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Lazy properties | Propriedades lentas: </b>Como otimização de desempenho, o Swift permite criar algumas propriedades somente quando elas são necessárias. (Melhorar o desempenho, apenas utilizada quando chamada ou atribuida valor.)</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">FamilyTree</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Creating family tree!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p style="font-size: 18px;"><b>Métodos e Propriedades estáticas:</b> Podemos criar propriedades ou metodos estáticos para serem utilizados sem precisar instancia-los</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> classSize <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span><font></font>
+<font></font>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token class-name">Student</span><span class="token punctuation">.</span>classSize <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">.</span>classSize<span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Controle de acesso: </b>O controle de acesso permite restringir qual código pode usar propriedades e métodos.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span><font></font>
+<font></font>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #009-->
 
             
             <!--Collapse 1-12-->
