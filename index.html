@@ -178,6 +178,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking11"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-011.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">20 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking11">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -997,7 +1006,107 @@ taylor<span class="token punctuation">.</span>name <span class="token operator">
                     </div>
                 </div>
             </div>
-            <!--HACKING #009-->
+            <!--HACKING #010-->
+
+            <!--HACKING #011-->
+            <div class="modal fade" id="hacking11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#011 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Protocols:</b> Protocolos são uma forma de descrever quais propriedades e métodos algo deve ter. É um paradigma de desenvolvimento de software que permite a criação de abstrações de comportamentos esperados de um determinado tipo de objeto.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token keyword">set</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">User</span><span class="token punctuation">:</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">displayID</span><span class="token punctuation">(</span>thing<span class="token punctuation">:</span> <span class="token class-name">Identifiable</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"My ID is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">thing<span class="token punctuation">.</span>id</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
+
+                                <p style="font-size: 18px;"><b>Herança de protocol:</b> Podemos fazer heranças entre protocolos, você pode herdar vários protocolos ao mesmo tempo antes de adicionar suas próprias alterações.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Payable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">calculateWages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+<span class="token keyword">protocol</span> <span class="token class-name">NeedsTraining</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+<span class="token keyword">protocol</span> <span class="token class-name">HasVacation</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">takeVacation</span><span class="token punctuation">(</span>days<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Employee</span><span class="token punctuation">:</span> <span class="token class-name">Payable</span><span class="token punctuation">,</span> <span class="token class-name">NeedsTraining</span><span class="token punctuation">,</span> <span class="token class-name">HasVacation</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Extensions: </b>As extensões permitem adicionar métodos a tipos existentes, para fazê-los fazer coisas para as quais não foram originalmente projetados. <b>Muito utilizada em Swift</b> .</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">extension</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">squared</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">self</span> <span class="token operator">*</span> <span class="token keyword">self</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Protocol extensions:</b> Os protocolos permitem descrever quais métodos algo deveria ter, mas não fornecem o código interno. As extensões permitem que você forneça o código dentro de seus métodos, mas afetam apenas um tipo de dados </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token keyword">set</span> <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">extension</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"My ID is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">id</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">User</span><span class="token punctuation">:</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+<span class="token keyword">let</span> twostraws <span class="token operator">=</span> <span class="token class-name">User</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"twostraws"</span></span><span class="token punctuation">)</span>
+twostraws<span class="token punctuation">.</span><span class="token function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+                                
+<p style="font-size: 18px;"><b>Programação orientada a Protocolos - POP:</b> As extensões de protocolo podem fornecer implementações padrão para nossos próprios métodos de protocolo.  </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token keyword">set</span> <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">extension</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"My ID is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">id</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">User</span><span class="token punctuation">:</span> <span class="token class-name">Identifiable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span><font></font>
+<font></font>
+<span class="token keyword">let</span> twostraws <span class="token operator">=</span> <span class="token class-name">User</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"twostraws"</span></span><span class="token punctuation">)</span>
+twostraws<span class="token punctuation">.</span><span class="token function">identify</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #011-->
 
             
             <!--Collapse 1-12-->
