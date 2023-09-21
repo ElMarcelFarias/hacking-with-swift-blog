@@ -1117,6 +1117,85 @@ twostraws<span class="token punctuation">.</span><span class="token function">id
             </div>
             <!--HACKING #011-->
 
+            <!--HACKING #012-->
+            <div class="modal fade" id="hacking12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#012 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Optionals:</b> Uma variável opcional pode, ou não, conter um valor. Caso não haja um valor, ela será nil, ou seja, nulo (não existe um valor). Se existe um valor, a variável se iguala a esse valor. (Utilizamos o ? para informar que a variavel ou método é opcional)</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token nil constant">nil</span></code></pre>
+
+
+
+                                <p style="font-size: 18px;"><b>Unwrapping optionals:</b> Utilizando a técnica de desembrulho, unwrapp, para termos certeza que aquela variavel ou método contém algum valor. Valores vázios causam erros criticos em tempo de compilação. Uma maneira comum de desembrulhar opcionais é com if let, sintaxe que desembrulha com uma condição.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">if</span> <span class="token keyword">let</span> unwrapped <span class="token operator">=</span> name <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">unwrapped<span class="token punctuation">.</span>count</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> letters"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Missing name."</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Unwrapping com guard: </b>Outra opção para realizar o unwrapping é o guard let,  guard let irá desembrulhar um opcional para você, mas se encontrar nil dentro dele, espera que você saia da função, loop ou condição em que o usou.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">greet</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">guard</span> <span class="token keyword">let</span> unwrapped <span class="token operator">=</span> name <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"You didn't provide a name!"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span><font></font>
+<font></font>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">unwrapped</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">!"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Force unwrapping: </b>o Swift permite forçar o desembrulhamento do opcional: converta-o de um tipo opcional para um tipo não opcional. (Caso você utilize o force unwrapping e a variavel esteja vazia irá causar erros criticos no seu app).</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token class-name">Int</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token operator">!</span></code></pre>
+
+                                <p style="font-size: 18px;"><b>Unwrapping simplificado: </b>Temos outra maneira de unwrapping mais simplificada, como nesse exemplo: </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">func</span> <span class="token function-definition function">username</span><span class="token punctuation">(</span><span class="token keyword">for</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">String</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> id <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Taylor Swift"</span></span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token function">username</span><span class="token punctuation">(</span><span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">)</span> <span class="token operator">??</span> <span class="token string-literal"><span class="token string">"Anonymous"</span></span></code></pre>
+
+
+                                <p style="font-size: 18px;"><b>Inicializadores falhos:</b> Este é um inicializador falível : um inicializador que pode funcionar ou não. Você pode escrevê-los em suas próprias estruturas e classes usando init?()em vez de init()e retornar nilse algo der errado. </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span><font></font>
+<font></font>
+    <span class="token keyword">init</span><span class="token operator">?</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> id<span class="token punctuation">.</span>count <span class="token operator">==</span> <span class="token number">9</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+                                
+<p style="font-size: 18px;"><b>Typecastig:</b> A conversão de tipo em Swift é implementada com os operadores is e as . Esses dois operadores fornecem uma maneira simples e expressiva de verificar o tipo de um valor ou converter um valor em um tipo diferente.</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">for</span> pet <span class="token keyword">in</span> pets <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> dog <span class="token operator">=</span> pet <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+        dog<span class="token punctuation">.</span><span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #011-->
+
             
             <!--Collapse 1-12-->
             
