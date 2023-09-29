@@ -85,6 +85,7 @@
 
                 <button type="button" class="btn btn-sm btn-warning collapsed text-white mb-2" data-toggle="collapse" data-target="#collapse1-10" aria-expanded="false" aria-controls="collapse1-10">Dias 1-12</button>
                 <button type="button" class="btn btn-sm btn-warning collapsed text-white mb-2" data-toggle="collapse" data-target="#collapse13-15" aria-expanded="false" aria-controls="collapse13-15">Consolidation I</button>
+                <button type="button" class="btn btn-sm btn-warning collapsed text-white mb-2" data-toggle="collapse" data-target="#collapse16-22" aria-expanded="false" aria-controls="collapse16-22">Dias 16-22</button>
 
                 <div class="content">
                     <div id="collapse1-10" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" >
@@ -206,6 +207,19 @@
                                     <a data-target="#hacking13"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-013.png"></a>
                                     <div class="card-body">
                                         <small class="border-left border-secondary pl-2 border-width-medium">Realizado revisão dos conteúdos da primeira parte. <span class="text-muted ml-2">22 Setembro 2023</span></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse16-22" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" >
+                        <div class="row " style="max-height: 1530px;">
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking16"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-016.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">29 Setembro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking16">Visualizar</button></h5>
                                     </div>
                                 </div>
                             </div>
@@ -1211,6 +1225,74 @@ twostraws<span class="token punctuation">.</span><span class="token function">id
 
             
             <!--Collapse 1-12-->
+
+
+            <!--Collapse 16-22-->
+            <!--HACKING #001-->
+            <div class="modal fade" id="hacking16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#016 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Starting iOS - Projeto 1</b></p>
+                                <p style="font-size: 16x;">Dando inico ao desenvolvimento de aplicativos reais, nosso primeiro projeto irá listar imagens para o usuário em uma tabela.</p>
+                                <p style="font-size: 16x;">Preparamos o ambiente de desenvolvimento, criação de pastas e incluimos fotos dentro do projeto já existentes no repositório projeto1 -> Content - hackingwithswift no Github</p>
+                                <p style="font-size: 16x;">Incluimos várias imagens da Administração Oceânica e Atmosférica Nacional (NOAA), seus nomes começam com nssl Ex.: nssliOS.png</p>
+                                <p style="font-size: 16x;">Iniciamos pelo arquivo ViewController, com o metodo padrão viewDidLoad</p>
+                                <p style="font-size: 16x;">ViewDidLoad:  o viewDidLoad(), método é chamado quando a tela é carregada e está pronta para ser customizada</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">import</span> <span class="token class-name">UIKit</span><font></font>
+    <font></font>
+    <span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token class-name">UIViewController</span> <span class="token punctuation">{</span>
+        <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment">// Do any additional setup after loading the view, typically from a nib.</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+                                
+                                <p style="font-size: 16x;">Antes vamos instanciar nosso array de fotos no começo do nosso código, encima do metodo viewDidLoad()</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> pictures <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">String</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+                                <p style="font-size: 16x;">Depois declaramos o FileManager, um tipo de dado que nos permite trabalhar com o sistema de arquivos e, no nosso caso, procurar essas fotos/arquivos</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">let</span> fm <span class="token operator">=</span> <span class="token class-name">FileManager</span><span class="token punctuation">.</span><span class="token keyword">default</span>
+    <span class="token keyword">let</span> path <span class="token operator">=</span> <span class="token class-name">Bundle</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>resourcePath<span class="token operator">!</span>
+    <span class="token keyword">let</span> items <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">!</span> fm<span class="token punctuation">.</span><span class="token function">contentsOfDirectory</span><span class="token punctuation">(</span>atPath<span class="token punctuation">:</span> path<span class="token punctuation">)</span><font></font>
+    <font></font>
+    <span class="token keyword">for</span> item <span class="token keyword">in</span> items <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> item<span class="token punctuation">.</span><span class="token function">hasPrefix</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"nssl"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">pictures</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span></code>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                                <p style="font-size: 16x;">Logo em seguida começamos a estilizar o nosso aplicativo pelo Interface Builder com storyboard, incluimos uma NavigationController e uma TableViewController, colocamos um identificador na nossa TableViewCell para conseguirmos manipular na ViewController e mudamos a tipagem da ViewController para UITableViewController para utilizarmos como uma tabela.</p>
+                                <p style="font-size: 16x;">Desenvolvemos em seguida dois metodos herdados da UITableViewController,  <b>tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell</b>  e <b>tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int</b>. Resumindo numberOfRowsInSection é a quantidade de linhas ou sessões que a tabela precisa ter, o Swift necessita dessa informação. E o cellForRowAt é a manipulação da célula, incluindo dados, etc. </p>
+                                <p style="font-size: 16x;"> <b>tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int</b> Nesse metodo necessita o retorno de um inteiro para saber quantas linhas irá realizar. Utilizamos o metodo count em nosso array de pictures. </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">tableView</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> tableView<span class="token punctuation">:</span> <span class="token class-name">UITableView</span><span class="token punctuation">,</span> numberOfRowsInSection section<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> pictures<span class="token punctuation">.</span>count
+<span class="token punctuation">}</span></code></pre>
+                                <p style="font-size: 16x;"> <b>tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell</b> Desse jeito conseguimos colocar os valores do array dentro de cada célula, no metodo dequeueReusableCell da tableView, o parâmetro withIdentifier é o nosso identifier que colocamos em nossa TableViewCell lá no storyboard. </p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">tableView</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> tableView<span class="token punctuation">:</span> <span class="token class-name">UITableView</span><span class="token punctuation">,</span> cellForRowAt indexPath<span class="token punctuation">:</span> <span class="token class-name">IndexPath</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">UITableViewCell</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> cell <span class="token operator">=</span> tableView<span class="token punctuation">.</span><span class="token function">dequeueReusableCell</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Picture"</span></span><span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> indexPath<span class="token punctuation">)</span>
+    cell<span class="token punctuation">.</span>textLabel<span class="token operator">?</span><span class="token punctuation">.</span>text <span class="token operator">=</span> pictures<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> cell
+<span class="token punctuation">}</span></code></pre>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--HACKING #001-->
+
+            <!--Collapse 16-22-->
             
 
 
