@@ -223,6 +223,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+                                <div class="card mb-4">
+                                    <a data-target="#hacking17"><img class="img-fluid" width="700" height="400" src="assets/images/hacking-017.png"></a>
+                                    <div class="card-body">
+                                        <small class="border-left border-secondary pl-2 border-width-medium">Programação com Swift<span class="text-muted ml-2">02 Outubro 2023</span></small>
+                                        <h5 class="weight-400 mt-3 mb-0"><button type="button" class="btn btn-sm text-secondary btn-view" data-toggle="modal" data-target="#hacking17">Visualizar</button></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1228,7 +1237,7 @@ twostraws<span class="token punctuation">.</span><span class="token function">id
 
 
             <!--Collapse 16-22-->
-            <!--HACKING #001-->
+            <!--HACKING #016-->
             <div class="modal fade" id="hacking16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content ">
@@ -1289,8 +1298,109 @@ twostraws<span class="token punctuation">.</span><span class="token function">id
                         </div>
                     </div>
                 </div>
+            </div> 
+            <!--HACKING #016-->
+
+            <!--HACKING #017--> 
+            <div class="modal fade" id="hacking17" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">#016 - HACKING WITH SWIFT</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="material-icons ">close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <p style="font-size: 18px;"><b>Starting iOS - Projeto 2</b></p>
+                                <p style="font-size: 16x;">Nosso próximo objetivo é projetar uma nova tela que será mostrada quando o usuário tocar em qualquer linha. Faremos com que ele mostre a imagem selecionada em tela cheia e ela deslizará automaticamente quando uma imagem for tocada.</p>
+                                <p style="font-size: 16x;">Primeiro, precisamos criar um novo código que hospedará esta tela de detalhes. Segundo, precisamos desenhar a interface do usuário para esta tela dentro do Interface Builder.</p>
+                                <p style="font-size: 16x;">Crie um arquivo Cocoa Touch Class nomeie ele para DetailViewController e para subclass, UIViewController, retire "Criar também arquivo XIB"</p>
+                                <p style="font-size: 16x;">Abra a biblioteca de objetos e encontre “View Controller”. Arraste-o para o espaço à direita da sua ViewController existente.</p>
+                                <p style="font-size: 16x;">Precisamos colocar um identificador nessa nova ViewController, vá para o inspetor de identidade pressionando Cmd+Alt+3 ou usando o menu. Agora digite “Detalhe” onde diz “ID do Storyboard”. É isso: agora podemos nos referir a essa ViewController como “Detalhe” no código. Clique na seta ao lado da caixa Classe e selecione “DetailViewController” para que nossa interface de usuário esteja conectada ao novo código que criamos anteriormente.</p>
+                                <p style="font-size: 16x;">Abra novamente a sua biblioteca UI e arraste uma UIImageView dentro dessa nova ViewController que acabou de realizar. Pode esticar a UIImageView Até todas as extremidades do dispositivo.</p>
+                                <p style="font-size: 16x;">Precisamos colocar algumas constraints na nossa UIImageView, para exercitarmos o Auto Layout, responsividade para o nosso aplicativo ser utilizado em diversos dispositivos Apple sem quebra de elementos. Por agora iremos utilizar o autolayout desse jeito: mas a maneira mais fácil agora é selecionar a visualização da imagem, ir ao menu Editor e escolher > Resolver problemas de layout automático > Redefinir para restrições sugeridas.</p>
+                                <p style="font-size: 16x;">Regras Auto Layout:</p>
+                                <p style="font-size: 16x;">Suas regras de layout devem estar completas. Ou seja, você não pode especificar apenas uma posição X para algo, você também deve especificar uma posição Y.</p>
+                                <p style="font-size: 16x;">Suas regras de layout não devem entrar em conflito. Ou seja, você não pode especificar que uma vista deve estar a 10 pontos da borda esquerda, a 10 pontos da borda direita e a 1.000 pontos de largura. A tela do iPhone 5 tem apenas 320 pontos de largura, então seu layout é matematicamente impossível. O Auto Layout tentará se recuperar desses problemas quebrando regras até encontrar uma solução, mas o resultado final nunca é o que você deseja.</p>
+                                <p style="font-size: 16x;">Depois declaramos um Outlet strong na nossa DetailViewController antes do método viewDidLoad</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">class</span> <span class="token class-name">DetailViewController</span><span class="token punctuation">:</span> <span class="token class-name">UIViewController</span> <span class="token punctuation">{</span>
+    <span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">var</span> imageView<span class="token punctuation">:</span> <span class="token class-name">UIImageView</span><span class="token operator">!</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>
+</pre>
+                                <p style="font-size: 16x;">Agora precisamos carregar nossas imagens com UIImage</p>
+                                <p style="font-size: 16x;"> O próximo objetivo é mostrar a tela de detalhes quando qualquer linha da tabela é tocada e mostrar a imagem selecionada.</p>
+                                <p style="font-size: 16x;"> Para fazer isso funcionar, precisamos adicionar outro método com nome especial ao ViewController. Este é chamado tableView(_, didSelectRowAt:), que assume um IndexPath valor como cellForRowAt esse que nos informa com qual linha estamos trabalhando. Mas antes precisamos fazer algumas coisas. </p>
+                                <p style="font-size: 16x;"> <ul>
+                                    <li>Precisamos criar uma propriedade DetailViewControllerque conterá o nome da imagem a ser carregada</li>
+                                    <li>Implementaremos o didSelectRowAtmétodo para que ele carregue a DetailViewControllerpartir do storyboard.</li>
+                                    <li>Por fim, preencheremos o viewDidLoad()interior DetailViewController para que carregue uma imagem em sua visualização de imagem com base no nome que definimos anteriormente.</li>
+                                </ul> </p>
+                                <p style="font-size: 16x;"> Então, adicione esta propriedade na DetailViewControlleragora, logo abaixo da linha existente @IBOutlet:</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">var</span> selectedImage<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span></code></pre>
+                                <p style="font-size: 16x;"> Dentro da função didSelectRowAt precisamos fazer um unwrapping para fazer a instancia da nossa ViewController com o identifier "Detalhes" utilizando typecasting para DetailViewController, depois atribuimos valor a nossa propriedade selectedImage, e colocamos na NavigationController</p>
+
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">tableView</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> tableView<span class="token punctuation">:</span> <span class="token class-name">UITableView</span><span class="token punctuation">,</span> didSelectRowAt indexPath<span class="token punctuation">:</span> <span class="token class-name">IndexPath</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1: try loading the "Detail" view controller and typecasting it to be DetailViewController</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> vc <span class="token operator">=</span> storyboard<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">instantiateViewController</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Detail"</span></span><span class="token punctuation">)</span> <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">DetailViewController</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 2: success! Set its selectedImage property</span>
+        vc<span class="token punctuation">.</span>selectedImage <span class="token operator">=</span> pictures<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span><font></font>
+<font></font>
+        <span class="token comment">// 3: now push it onto the navigation controller</span>
+        navigationController<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">pushViewController</span><span class="token punctuation">(</span>vc<span class="token punctuation">,</span> animated<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+                            <p style="font-size: 16x;"> na DetailViewController, após a chamada da viewDidLoad realizamos um unwrapping da propriedade opcional selectedImage e com seu sucesso, atribuimos uma Imagem com UIImage(named: )</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">if</span> <span class="token keyword">let</span> imageToLoad <span class="token operator">=</span> selectedImage <span class="token punctuation">{</span>
+    imageView<span class="token punctuation">.</span>image  <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> imageToLoad<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+                            <p style="font-size: 16x;"> Para resolvermos o problema das imagens estarem esticadas demais, abra o Interface Builder, selecione a UIImageView. Abra o attributes inspector se você não gosta de procurá-lo, basta pressionar Cmd+Alt+4 para acessá-lo. O alongamento é causado pelo modo de visualização, que é um botão suspenso cujo padrão é “Aspect Fit” ou “Aspect Fill” dependendo da sua versão do Xcode. Tente mudar para “Aspect Fill”</p>
+                            <p style="font-size: 16x;"> Nosso proximo objetivo é permitir que os usuários visualizem as imagens em tela cheia, sem nenhuma barra de navegação atrapalhando. Existe uma maneira muito fácil de fazer isso acontecer, e é uma propriedade UINavigationControllerchamada hidesBarsOnTap. </p>
+                            <p style="font-size: 16x;"> Precisamos tomar alguns cuidados ao utilizar o hidesBarsOnTap, se o tivéssemos ativado o tempo todo, isso afetaria os toques na TableView, o que causaria estragos quando o usuário tentasse selecionar coisas. Portanto, precisamos habilitá-lo ao mostrar o ViewController de detalhes e, em seguida, desabilitá-lo ao ocultá-lo. </p>
+                            <p style="font-size: 16x;"> Por esse motivo iremos utilizar esses dois métodos, viewWillAppear() e viewWillDisappear() mas existem outros como: 
+                            <ul>
+                                <li>viewDidAppear</li>
+                                <li>viewWillDisappear</li>
+                                <li>viewDidDisappear</li>
+                                <li>viewWillAppear</li>
+                                <li>viewDidLoad</li>
+                            </ul></p>
+
+
+                            <p style="font-size: 16x;"> Abra DetailViewController.swift e adicione estes dois novos métodos diretamente abaixo do final do viewDidLoad():</p>
+<pre class=" language-swift"><code class=" language-swift"><span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewWillAppear</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> animated<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewWillAppear</span><span class="token punctuation">(</span>animated<span class="token punctuation">)</span>
+    navigationController<span class="token operator">?</span><span class="token punctuation">.</span>hidesBarsOnTap <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewWillDisappear</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> animated<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewWillDisappear</span><span class="token punctuation">(</span>animated<span class="token punctuation">)</span>
+    navigationController<span class="token operator">?</span><span class="token punctuation">.</span>hidesBarsOnTap <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+                        <p style="font-size: 16x;"> E para finalizar, vamos deixar nosso title da nossa ViewController large, e mudarmos seu valor. </p>
+<pre class=" language-swift"><code class=" language-swift">title <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Storm Viewer"</span></span></code></pre>
+<pre class=" language-swift"><code class=" language-swift">navigationController<span class="token operator">?</span><span class="token punctuation">.</span>navigationBar<span class="token punctuation">.</span>prefersLargeTitles <span class="token operator">=</span> <span class="token boolean">true</span></code></pre>
+                        <p style="font-size: 16x;"> Para o titulo da nossa view de detalhes faremos dinâmica, pegando o nome da imagem selecionada. Adicione isso na viewDidLoad() em DetailViewController: </p>
+<pre class=" language-swift"><code class=" language-swift">title <span class="token operator">=</span> selectedImage</code></pre>
+                        <p style="font-size: 16x;"> E a largura do nosso titulo da DetailViewController pequena. Adicione na ViewDidLoad</p>
+<pre class=" language-swift"><code class=" language-swift">navigationItem<span class="token punctuation">.</span>largeTitleDisplayMode <span class="token operator">=</span> <span class="token punctuation">.</span>never</code></pre>
+                        </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--HACKING #001-->
+            <!--HACKING #017-->
 
             <!--Collapse 16-22-->
             
